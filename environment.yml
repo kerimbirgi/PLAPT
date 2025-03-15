@@ -18,6 +18,7 @@ dependencies:
   - requests
   - tqdm
   - pillow
+  - libsqlite <=3.48.0
   - pip:
     - onnxruntime
     - diskcache
