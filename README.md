@@ -68,25 +68,19 @@ PLAPT can be used via command line or integrated into Python scripts.
 Predict affinity for a single protein and multiple ligands:
 
 ```bash
-python3 plapt_cli.py -p "SEQUENCE" -m "SMILES1" "SMILES2" "SMILES3"
+python3 plapt_cli.py -t "SEQUENCE" -m "SMILES1" "SMILES2" "SMILES3"
 ```
 
 Predict affinities for multiple protein-ligand pairs:
 
 ```bash
-python3 plapt_cli.py -p "SEQUENCE1" "SEQUENCE2" -m "SMILES1" "SMILES2"
-```
-
-Use files for input:
-
-```bash
-python3 plapt_cli.py -p proteins.txt -m molecules.txt
+python3 plapt_cli.py -t "SEQUENCE1" "SEQUENCE2" -m "SMILES1" "SMILES2"
 ```
 
 Save results to a file:
 
 ```bash
-python3 plapt_cli.py -p "SEQUENCE" -m "SMILES1" "SMILES2" -o results.json
+python3 plapt_cli.py -t "SEQUENCE" -m "SMILES1" "SMILES2" -o results.json
 ```
 
 #### Python Integration
