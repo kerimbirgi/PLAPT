@@ -29,16 +29,15 @@ def evaluate(data_path, protein_path):
         targets.append(row['-logAffi'])
         loss = result_dict['neg_log10_affinity_M'] - row['-logAffi']
         count += 1
-        print(loss / count)
         ids.append(row['Target ChEMBLID'] + '_' + row['Molecule ChEMBLID'])
 
     return predictions, targets, ids
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data_path", default="/data2/BindingNetv2/processed/splits/subset_20p_with_false/test.csv" ,type=str, required=True)
-    parser.add_argument("--protein_path", default="/data2/BindingNetv2/processed/proteins/first_chain_protein_sequences.pkl" ,type=str, required=True)
-    parser.add_argument("--output_csv", default="/data2/home/kgb24/bindingnet_research/outputs/predictions/PLAPT_20p_with_false/predictions.csv" ,type=str, required=True, help="Path to save the output CSV file")
+    parser.add_argument("--data_path", default="/data2/BindingNetv2/processed/splits/subset_20p_with_false/test.csv" ,type=str)
+    parser.add_argument("--protein_path", default="/data2/BindingNetv2/processed/proteins/first_chain_protein_sequences.pkl" ,type=str)
+    parser.add_argument("--output_csv", default="/data2/home/kgb24/bindingnet_research/outputs/predictions/PLAPT_20p_with_false/predictions.csv" ,type=str, help="Path to save the output CSV file")
     args = parser.parse_args()
     
     predictions, targets, ids = evaluate(args.data_path, args.protein_path)
